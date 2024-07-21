@@ -49,7 +49,7 @@ class PemohonController extends Controller
         $request->validate([
             'tujuan' => 'required|string',
             'nama' => 'required|string|max:255',
-            'nik' => 'required|numeric|min:16|unique:pemohons,nik',
+            'nik' => 'required|numeric|unique:pemohons,nik|digits:16',
             'email' => 'required|email|unique:pemohons,email',
             'divisi' => 'required|string|max:255',
             'grup' => 'required|string|max:255',

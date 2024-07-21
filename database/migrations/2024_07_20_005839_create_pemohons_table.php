@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->text('tujuan');
             $table->string('nama');
-            $table->integer('nik');
+            $table->bigInteger('nik');
             $table->string('email');
             $table->string('divisi');
             $table->string('grup');

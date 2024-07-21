@@ -4,106 +4,94 @@
             Detail Data <i class="text-blue-500">{{ $pemohon->nama }}</i>
         </h2>
     </x-slot>
-
-    <x-card>
-        <div class="space-y-12">
+    <div class="space-y-12">
+        <x-card>
             <div class="border-b border-gray-900/10 pb-12">
                 <div class="col-span-full">
-                    <label class="block text-sm font-medium leading-6 text-gray-900">
-                        <h2 class="text-base font-semibold leading-7 text-gray-900">Tujuan</h2>
-                    </label>
-                    <p class="mt-1 text-sm leading-6 text-gray-600">Tujuan mengajukan permohonan koneksi.</p>
-                    <div class="mt-2">
-                        <textarea rows="3" disabled
-                            class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">{{ $pemohon->tujuan }}</textarea>
-                    </div>
+                    <x-input-label class="text-base font-semibold leading-7 text-gray-900 dark:text-white"
+                        :value="__('Tujuan Pengajuan')" />
+                    <textarea disabled rows="3"
+                        class="mt-3 block w-full border-0 py-1.5 border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-sky-500 dark:focus:border-sky-600 focus:ring-sky-500 dark:focus:ring-sky-600 rounded-md shadow-sm">{{ $pemohon->tujuan }}</textarea>
                 </div>
             </div>
+        </x-card>
+        <x-card>
             <div class="border-b border-gray-900/10 pb-12">
-                <h2 class="text-base font-semibold leading-7 text-gray-900">Data Pemohon</h2>
-                <p class="mt-1 text-sm leading-6 text-gray-600">Data pribadi pemohon</p>
+                <h2 class="text-base font-semibold leading-7 text-gray-900 dark:text-white">Data Pemohon</h2>
+                <p class="mt-1 text-sm leading-6 text-gray-600 dark:text-gray-400">Data pribadi pemohon</p>
                 <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
                     <div class="sm:col-span-3">
-                        <label class="block text-sm font-medium leading-6 text-gray-900">Nama
-                            Lengkap</label>
-                        <div class="mt-2">
-                            <input disabled value="{{ $pemohon->nama }}"
-                                class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
-                        </div>
+                        <x-input-label :value="__('Nama Lengkap')" />
+                        <x-text-input disabled class="block mt-1 w-full" type="text" :value="$pemohon->nama" required
+                            autofocus />
                     </div>
-
                     <div class="sm:col-span-3">
-                        <label class="block text-sm font-medium leading-6 text-gray-900">NIK</label>
-                        <div class="mt-2">
-                            <input disabled value="{{ $pemohon->nik }}"
-                                class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
-                        </div>
+                        <x-input-label :value="__('NIK')" />
+                        <x-text-input disabled class="block mt-1 w-full" type="number" :value="$pemohon->nik" required
+                            autofocus />
                     </div>
-
-                    <div class="sm:col-span-4">
-                        <label class="block text-sm font-medium leading-6 text-gray-900">Alamat
-                            E-Mail</label>
-                        <div class="mt-2">
-                            <input disabled value="{{ $pemohon->email }}"
-                                class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
-                        </div>
+                    <div class="sm:col-span-6">
+                        <x-input-label :value="__('Alamat Email')" />
+                        <x-text-input disabled class="block mt-1 w-full" type="email" :value="$pemohon->email" required
+                            autofocus />
                     </div>
-
                     <div class="sm:col-span-3">
-                        <label class="block text-sm font-medium leading-6 text-gray-900">Divisi</label>
-                        <div class="mt-2">
-                            <input disabled value="{{ $pemohon->divisi }}"
-                                class=" block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
-                        </div>
+                        <x-input-label :value="__('Divisi')" />
+                        <x-text-input disabled class="block mt-1 w-full" type="text" :value="$pemohon->divisi" required
+                            autofocus />
                     </div>
-
                     <div class="sm:col-span-3">
-                        <label class="block text-sm font-medium leading-6 text-gray-900">Grup</label>
-                        <div class="mt-2">
-                            <input disabled value="{{ $pemohon->grup }}"
-                                class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
-                        </div>
+                        <x-input-label :value="__('Grup')" />
+                        <x-text-input disabled class="block mt-1 w-full" type="text" :value="$pemohon->grup" required
+                            autofocus />
                     </div>
                 </div>
             </div>
-
+        </x-card>
+        <x-card>
             <div class="border-b border-gray-900/10 pb-12">
-                <h2 class="text-base font-semibold leading-7 text-gray-900">Informasi Koneksi</h2>
-                <p class="mt-1 text-sm leading-6 text-gray-600">Detail pengajuan koneksi
+                <h2 class="text-base font-semibold leading-7 text-gray-900 dark:text-white">Informasi Koneksi</h2>
+                <p class="mt-1 text-sm leading-6 text-gray-600 dark:text-gray-400">Detail pengajuan koneksi
                 </p>
-
                 <div class="my-10 space-y-10">
                     <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
                         <fieldset class="sm:col-span-3">
-                            <legend class="text-sm font-semibold leading-6 text-gray-900">Kebutuhan Akses</legend>
+                            <legend class="text-sm font-semibold leading-6 text-gray-900 dark:text-gray-400">
+                                Kebutuhan Akses</legend>
                             <div class="mt-6 space-y-6">
                                 <div class="flex items-center gap-x-3">
-                                    <input disabled type="radio"
+                                    <input disabled type="radio" value="production"
                                         {{ $pemohon->kebutuhan == 'production' ? 'checked' : '' }}
-                                        class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
-                                    <label class="block text-sm font-medium leading-6 text-gray-900">Production</label>
+                                        class="h-4 w-4 dark:bg-gray-900 border-gray-300 text-sky-600 focus:ring-sky-600">
+                                    <label
+                                        class="block text-sm font-medium leading-6 text-gray-900 dark:text-gray-400">Production</label>
                                 </div>
                                 <div class="flex items-center gap-x-3">
-                                    <input disabled type="radio"
+                                    <input disabled type="radio" value="development"
                                         {{ $pemohon->kebutuhan == 'development' ? 'checked' : '' }}
-                                        class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
-                                    <label class="block text-sm font-medium leading-6 text-gray-900">Development</label>
+                                        class="h-4 w-4 dark:bg-gray-900 border-gray-300 text-sky-600 focus:ring-sky-600">
+                                    <label
+                                        class="block text-sm font-medium leading-6 text-gray-900 dark:text-gray-400">Development</label>
                                 </div>
                             </div>
                         </fieldset>
                         <fieldset class="sm:col-span-3">
-                            <legend class="text-sm font-semibold leading-6 text-gray-900">Akses Koneksi</legend>
+                            <legend class="text-sm font-semibold leading-6 text-gray-900 dark:text-gray-400">Akses
+                                Koneksi</legend>
                             <div class="mt-6 space-y-6">
                                 <div class="flex items-center gap-x-3">
-                                    <input disabled type="radio" {{ $pemohon->akses == 'internal' ? 'checked' : '' }}
-                                        class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
-                                    <label class="block text-sm font-medium leading-6 text-gray-900">Internal</label>
+                                    <input disabled type="radio" value="internal"
+                                        {{ $pemohon->akses == 'internal' ? 'checked' : '' }}
+                                        class="h-4 w-4 dark:bg-gray-900 border-gray-300 text-sky-600 focus:ring-sky-600">
+                                    <label
+                                        class="block text-sm font-medium leading-6 text-gray-900 dark:text-gray-400">Internal</label>
                                 </div>
                                 <div class="flex items-center gap-x-3">
-                                    <input disabled type="radio"
+                                    <input disabled type="radio" value="pihakKetiga"
                                         {{ $pemohon->akses == 'pihakKetiga' ? 'checked' : '' }}
-                                        class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
-                                    <label class="block text-sm font-medium leading-6 text-gray-900">Pihak
+                                        class="h-4 w-4 dark:bg-gray-900 border-gray-300 text-sky-600 focus:ring-sky-600">
+                                    <label
+                                        class="block text-sm font-medium leading-6 text-gray-900 dark:text-gray-400">Pihak
                                         Ketiga</label>
                                 </div>
                             </div>
@@ -111,118 +99,105 @@
                     </div>
                 </div>
                 <div class="sm:col-span-4">
-                    <label class="block text-sm font-medium leading-6 text-gray-900">Nama
-                        Aplikasi /
-                        Koneksi</label>
-                    <div class="mt-2">
-                        <input disabled value="{{ $pemohon->koneksiAplikasi }}"
-                            class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
-                    </div>
+                    <x-input-label :value="__('Nama Aplikasi / Koneksi')" />
+                    <x-text-input disabled class="block mt-1 w-full" type="text" :value="$pemohon->koneksiAplikasi" required
+                        autofocus />
                 </div>
                 <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
                     <div class="sm:col-span-3">
-                        <label class="block text-sm font-medium leading-6 text-gray-900">Mulai</label>
-                        <div class="mt-2">
-                            <input type="date" disabled value="{{ $pemohon->mulai }}"
-                                class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
-                        </div>
+                        <x-input-label :value="__('Jangka Waktu Mulai')" />
+                        <x-text-input disabled class="block mt-1 w-full" type="date" :value="$pemohon->mulai" required
+                            autofocus />
                     </div>
-
                     <div class="sm:col-span-3">
-                        <label class="block text-sm font-medium leading-6 text-gray-900">Selesai</label>
-                        <div class="mt-2">
-                            <input type="date" disabled value="{{ $pemohon->sampai }}"
-                                class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
-                        </div>
+                        <x-input-label :value="__('Selesai')" />
+                        <x-text-input disabled class="block mt-1 w-full" type="date" :value="$pemohon->sampai" required
+                            autofocus />
                     </div>
-
                     <div class="sm:col-span-2 sm:col-start-1">
-                        <label class="block text-sm font-medium leading-6 text-gray-900">IP
-                            Source</label>
-                        <div class="mt-2" id="ipSourceContainer">
-                            @foreach (json_decode($pemohon->ipSource) as $s)
-                                <input disabled value="{{ $s }}"
-                                    class="mb-5 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
-                            @endforeach
-                        </div>
+                        <x-input-label :value="__('IP Source')" />
+                        @foreach (json_decode($pemohon->ipSource) as $s)
+                            <x-text-input disabled class="block mt-2 w-full" type="text" :value="$s" required
+                                autofocus />
+                        @endforeach
                     </div>
-
                     <div class="sm:col-span-2">
-                        <label class="block text-sm font-medium leading-6 text-gray-900">IP
-                            Destination</label>
-                        <div class="mt-2" id="ipDestinationContainer">
-                            @foreach (json_decode($pemohon->ipDestination) as $d)
-                                <input disabled value="{{ $d }}"
-                                    class="mb-5 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
-                            @endforeach
-                        </div>
+                        <x-input-label :value="__('IP Destination')" />
+                        @foreach (json_decode($pemohon->ipDestination) as $d)
+                            <x-text-input disabled class="block mt-2 w-full" type="text" :value="$d" required
+                                autofocus />
+                        @endforeach
                     </div>
-
                     <div class="sm:col-span-2">
-                        <label class="block text-sm font-medium leading-6 text-gray-900">PORT</label>
-                        <div class="mt-2" id="portContainer">
-                            @foreach (json_decode($pemohon->port) as $p)
-                                <input disabled value="{{ $p }}"
-                                    class="mb-5 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
-                            @endforeach
-                        </div>
+                        <x-input-label :value="__('Port')" />
+                        @foreach (json_decode($pemohon->port) as $p)
+                            <x-text-input disabled class="block mt-2 w-full" type="text" :value="$p" required
+                                autofocus />
+                        @endforeach
                     </div>
-
                 </div>
             </div>
             <div class="my-10 space-y-10">
                 <fieldset>
-                    <legend class="text-sm font-semibold leading-6 text-gray-900"><i>Initiate Connection</i>
+                    <legend class="text-sm font-semibold leading-6 text-gray-900 dark:text-gray-400"><i>Initiate
+                            Connection</i>
                     </legend>
                     <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
                         <div class="flex items-center gap-x-3">
-                            <input disabled type="radio"
+                            <input disabled type="radio" value="Bank bjb"
                                 {{ $pemohon->initiateConnection == 'Bank bjb' ? 'checked' : '' }}
-                                class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
-                            <label class="block text-sm font-medium leading-6 text-gray-900">bank
+                                class="h-4 w-4 dark:bg-gray-900 border-gray-300 text-sky-600 focus:ring-sky-600">
+                            <label class="block text-sm font-medium leading-6 text-gray-900 dark:text-gray-400">bank
                                 bjb</label>
                         </div>
                         <div class="flex items-center gap-x-3">
-                            <input id="pihakKetiga" name="initiateConnection" type="radio" value="Pihak Ketiga"
+                            <input disabled type="radio" value="Pihak Ketiga"
                                 {{ $pemohon->initiateConnection == 'Pihak Ketiga' ? 'checked' : '' }}
-                                class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
-                            <label class="block text-sm font-medium leading-6 text-gray-900">Pihak
+                                class="h-4 w-4 dark:bg-gray-900 border-gray-300 text-sky-600 focus:ring-sky-600">
+                            <label class="block text-sm font-medium leading-6 text-gray-900 dark:text-gray-400">Pihak
                                 Ketiga</label>
                         </div>
                     </div>
                 </fieldset>
                 <fieldset>
-                    <legend class="text-sm font-semibold leading-6 text-gray-900">Lampiran</legend>
+                    <legend class="text-sm font-semibold leading-6 text-gray-900 dark:text-gray-400">Lampiran
+                    </legend>
                     <div class="mt-6 space-y-6">
                         <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
                             <div class="flex items-center gap-x-3">
-                                <input disabled type="radio"
+                                <input disabled type="radio" value="Topology Aplikasi"
                                     {{ $pemohon->lampiran == 'Topology Aplikasi' ? 'checked' : '' }}
-                                    class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
-                                <label class="block text-sm font-medium leading-6 text-gray-900">Topology
+                                    class="h-4 w-4 dark:bg-gray-900 border-gray-300 text-sky-600 focus:ring-sky-600">
+                                <label
+                                    class="block text-sm font-medium leading-6 text-gray-900 dark:text-gray-400">Topology
                                     Aplikasi</label>
                             </div>
                             <div class="flex items-center gap-x-3">
-                                <input disabled type="radio"
+                                <input disabled type="radio" value="Perjanjian Kerjasama"
                                     {{ $pemohon->lampiran == 'Perjanjian Kerjasama' ? 'checked' : '' }}
-                                    class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
-                                <label class="block text-sm font-medium leading-6 text-gray-900">Perjanjian
+                                    class="h-4 w-4 dark:bg-gray-900 border-gray-300 text-sky-600 focus:ring-sky-600">
+                                <label
+                                    class="block text-sm font-medium leading-6 text-gray-900 dark:text-gray-400">Perjanjian
                                     Kerjasama</label>
                             </div>
                             <div class="flex items-center gap-x-3">
-                                <input disabled type="radio" {{ $pemohon->lampiran == 'BRD' ? 'checked' : '' }}
-                                    class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
-                                <label class="block text-sm font-medium leading-6 text-gray-900">BRD</label>
+                                <input disabled type="radio" value="BRD"
+                                    {{ $pemohon->lampiran == 'BRD' ? 'checked' : '' }}
+                                    class="h-4 w-4 dark:bg-gray-900 border-gray-300 text-sky-600 focus:ring-sky-600">
+                                <label
+                                    class="block text-sm font-medium leading-6 text-gray-900 dark:text-gray-400">BRD</label>
                             </div>
                             <div class="flex items-center gap-x-3">
-                                <input disabled type="radio" {{ $pemohon->lampiran == 'Lainnya' ? 'checked' : '' }}
-                                    class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
-                                <label class="block text-sm font-medium leading-6 text-gray-900">Lainnya.....</label>
+                                <input disabled type="radio" value="Lainnya"
+                                    {{ $pemohon->lampiran == 'Lainnya' ? 'checked' : '' }}
+                                    class="h-4 w-4 dark:bg-gray-900 border-gray-300 text-sky-600 focus:ring-sky-600">
+                                <label
+                                    class="block text-sm font-medium leading-6 text-gray-900 dark:text-gray-400">Lainnya.....</label>
                             </div>
                         </div>
                     </div>
                 </fieldset>
             </div>
-        </div>
-    </x-card>
+        </x-card>
+    </div>
 </x-app-layout>

@@ -33,16 +33,30 @@
                             <td class="px-6 py-4">{{ $p->mulai }}</td>
                             <td class="px-6 py-4">{{ $p->sampai }}</td>
                             <td class="px-6 py-4 text-center">
-                                <form onsubmit="return confirm('Apakah Anda Yakin ?');"
-                                    action="{{ route('eform.destroy', $p->id) }}" method="POST">
-                                    <a href="{{ route('eform.show', $p->id) }}"
-                                        class="m-2 inline-block bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded">SHOW</a>
-                                    @csrf
-                                    @method('DELETE')
-                                    <x-danger-button>
-                                        HAPUS
-                                    </x-danger-button>
-                                </form>
+                                <a href="{{ route('eform.show', $p->id) }}"
+                                    class="m-2 inline-block bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded">SHOW</a>
+                                <x-danger-button x-data=""
+                                    x-on:click.prevent="$dispatch('open-modal', 'konfirmasiHapusPemohon')">{{ __('Hapus') }}</x-danger-button>
+                                <x-modal name="konfirmasiHapusPemohon" focusable>
+                                    <form method="POST" action="{{ route('eform.destroy', $p->id) }}" class="p-6">
+                                        @csrf
+                                        @method('DELETE')
+                                        <h2 class="text-lg font-medium text-gray-900 dark:text-gray-100">
+                                            {{ __('Apakah Anda yakin ingin menghapus data ini?') }}
+                                        </h2>
+                                        <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">
+                                            {{ __('Setelah data ini dihapus, semua sumber daya dan datanya akan dihapus secara permanen.') }}
+                                        </p>
+                                        <div class="mt-6 flex justify-end">
+                                            <x-secondary-button x-on:click="$dispatch('close')">
+                                                {{ __('Membatalkan') }}
+                                            </x-secondary-button>
+                                            <x-danger-button class="ms-3">
+                                                {{ __('Hapus Data') }}
+                                            </x-danger-button>
+                                        </div>
+                                    </form>
+                                </x-modal>
                             </td>
                         </tr>
                     @empty

@@ -13,7 +13,7 @@
                         <x-input-label class="text-base font-semibold leading-7 text-gray-900 dark:text-white"
                             for="tujuan" :value="__('Tujuan Pengajuan')" />
                         <textarea id="tujuan" name="tujuan" rows="3"
-                            class="@error('tujuan') is-invalid @enderror mt-3 block w-full border-0 py-1.5 border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-sky-500 dark:focus:border-sky-600 focus:ring-sky-500 dark:focus:ring-sky-600 rounded-md shadow-sm">{{ old('tujuan') }}</textarea>
+                            class="mt-3 block w-full border-0 py-1.5 border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-sky-500 dark:focus:border-sky-600 focus:ring-sky-500 dark:focus:ring-sky-600 rounded-md shadow-sm">{{ old('tujuan') }}</textarea>
                         <x-input-error :messages="$errors->get('tujuan')" class="mt-2" />
                     </div>
                 </div>
@@ -136,7 +136,7 @@
                             <x-input-error :messages="$errors->get('ipSource')" class="mt-2" />
                         </div>
                         <div class="sm:col-span-2">
-                            <x-input-label for="ipDestination" :value="__('IP Source')" />
+                            <x-input-label for="ipDestination" :value="__('IP Destination')" />
                             <div id="ipDestinationContainer">
                                 <x-text-input id="ipDestination" class="block mt-2 w-full" type="text"
                                     name="ipDestination[]" :value="old('ipDestination.0', '')" required autofocus />
@@ -144,7 +144,7 @@
                             <x-input-error :messages="$errors->get('ipDestination')" class="mt-2" />
                         </div>
                         <div class="sm:col-span-2">
-                            <x-input-label for="port" :value="__('IP Source')" />
+                            <x-input-label for="port" :value="__('Port')" />
                             <div id="portContainer">
                                 <x-text-input id="port" class="block mt-2 w-full" type="number" name="port[]"
                                     :value="old('port.0', '')" required autofocus />
