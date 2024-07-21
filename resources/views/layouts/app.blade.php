@@ -73,10 +73,11 @@
                 newIpSourceInput.type = 'text';
                 newIpSourceInput.name = 'ipSource[]';
                 newIpSourceInput.id = 'ipSource';
-                newIpSourceInput.classList.add('mb-5', 'block', 'w-full', 'rounded-md', 'border-0',
-                    'py-1.5', 'text-gray-900', 'shadow-sm', 'ring-1', 'ring-inset', 'ring-gray-300',
-                    'placeholder:text-gray-400', 'focus:ring-2', 'focus:ring-inset',
-                    'focus:ring-indigo-600', 'sm:text-sm', 'sm:leading-6');
+                newIpSourceInput.classList.add('block','w-full','mt-5','border-gray-300', 'dark:border-gray-700',
+                    'dark:bg-gray-900', 'dark:text-gray-300', 'focus:border-sky-500',
+                    'dark:focus:border-sky-600', 'focus:ring-sky-500', 'dark:focus:ring-sky-600',
+                    'rounded-md', 'shadow-sm'
+                );
                 ipSourceContainer.appendChild(newIpSourceInput);
 
                 // IP Destination
@@ -84,21 +85,22 @@
                 newIpDestinationInput.type = 'text';
                 newIpDestinationInput.name = 'ipDestination[]';
                 newIpDestinationInput.id = 'ipDestination';
-                newIpDestinationInput.classList.add('mb-5', 'block', 'w-full', 'rounded-md', 'border-0',
-                    'py-1.5', 'text-gray-900', 'shadow-sm', 'ring-1', 'ring-inset', 'ring-gray-300',
-                    'placeholder:text-gray-400', 'focus:ring-2', 'focus:ring-inset',
-                    'focus:ring-indigo-600', 'sm:text-sm', 'sm:leading-6');
+                newIpDestinationInput.classList.add('block','w-full','mt-5','border-gray-300', 'dark:border-gray-700',
+                    'dark:bg-gray-900', 'dark:text-gray-300', 'focus:border-sky-500',
+                    'dark:focus:border-sky-600', 'focus:ring-sky-500', 'dark:focus:ring-sky-600',
+                    'rounded-md', 'shadow-sm'
+                );
                 ipDestinationContainer.appendChild(newIpDestinationInput);
 
                 // PORT
                 const newPortInput = document.createElement('input');
-                newPortInput.type = 'text';
+                newPortInput.type = 'number';
                 newPortInput.name = 'port[]';
                 newPortInput.id = 'port';
-                newPortInput.classList.add('mb-5', 'block', 'w-full', 'rounded-md', 'border-0', 'py-1.5',
-                    'text-gray-900', 'shadow-sm', 'ring-1', 'ring-inset', 'ring-gray-300',
-                    'placeholder:text-gray-400', 'focus:ring-2', 'focus:ring-inset',
-                    'focus:ring-indigo-600', 'sm:text-sm', 'sm:leading-6');
+                newPortInput.classList.add('block','w-full','mt-5','border-gray-300', 'dark:border-gray-700', 'dark:bg-gray-900',
+                    'dark:text-gray-300', 'focus:border-sky-500', 'dark:focus:border-sky-600',
+                    'focus:ring-sky-500', 'dark:focus:ring-sky-600', 'rounded-md', 'shadow-sm'
+                );
                 portContainer.appendChild(newPortInput);
             });
         });

@@ -129,20 +129,26 @@
                         </div>
                         <div class="sm:col-span-2 sm:col-start-1">
                             <x-input-label for="ipSource" :value="__('IP Source')" />
-                            <x-text-input id="ipSource" class="block mt-1 w-full" type="text" name="ipSource[]"
-                                :value="old('ipSource.0', '')" required autofocus />
+                            <div id="ipSourceContainer">
+                                <x-text-input id="ipSource" class="block mt-2 w-full" type="text"
+                                    name="ipSource[]" :value="old('ipSource.0', '')" required autofocus />
+                            </div>
                             <x-input-error :messages="$errors->get('ipSource')" class="mt-2" />
                         </div>
                         <div class="sm:col-span-2">
                             <x-input-label for="ipDestination" :value="__('IP Source')" />
-                            <x-text-input id="ipDestination" class="block mt-1 w-full" type="text"
-                                name="ipDestination[]" :value="old('ipDestination.0', '')" required autofocus />
+                            <div id="ipDestinationContainer">
+                                <x-text-input id="ipDestination" class="block mt-2 w-full" type="text"
+                                    name="ipDestination[]" :value="old('ipDestination.0', '')" required autofocus />
+                            </div>
                             <x-input-error :messages="$errors->get('ipDestination')" class="mt-2" />
                         </div>
                         <div class="sm:col-span-2">
                             <x-input-label for="port" :value="__('IP Source')" />
-                            <x-text-input id="port" class="block mt-1 w-full" type="number" name="port[]"
-                                :value="old('port.0', '')" required autofocus />
+                            <div id="portContainer">
+                                <x-text-input id="port" class="block mt-2 w-full" type="number" name="port[]"
+                                    :value="old('port.0', '')" required autofocus />
+                            </div>
                             <x-input-error :messages="$errors->get('port')" class="mt-2" />
                         </div>
                         <button type="button" id="addFields"
