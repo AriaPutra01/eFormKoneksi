@@ -1,15 +1,13 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\PemohonController;
+use App\Exports\WordExport;
 
 Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/dashboard', function () {
     return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+});
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -17,6 +15,8 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::resource('/eform', \App\Http\Controllers\PemohonController::class)->middleware(['auth', 'verified']);
+Route::resource('/formKoneksi', PemohonController::class)->middleware(['auth', 'verified']);
+Route::get('/form/export-excel', [PemohonController::class, 'export'])->name('eform.export.excel');
+Route::get('/pemohon/{id}/export-word', [WordExport::class, 'export'])->name('pemohon.export.word');
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';

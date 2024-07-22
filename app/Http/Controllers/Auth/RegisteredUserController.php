@@ -45,6 +45,6 @@ class RegisteredUserController extends Controller
 
         Auth::login($user);
 
-        return redirect(route('eform.index', absolute: false));
+        return redirect(route('formKoneksi.index', absolute: false));
     }
 }

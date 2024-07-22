@@ -6,9 +6,12 @@
     </x-slot>
 
     <x-card>
-        <a href="{{ route('eform.create') }}"
+        <a href="{{ route('formKoneksi.create') }}"
             class="bg-sky-500 dark:bg-sky-700 hover:bg-sky-700 dark:hover:bg-sky-500 text-white font-bold py-2 px-4 rounded">TAMBAH
             DATA</a>
+        <a href="{{ route('eform.export.excel') }}"
+            class="bg-green-500 dark:bg-green-700 hover:bg-green-700 dark:hover:bg-green-500 text-white font-bold py-2 px-4 rounded">EXPORT
+            EXCEL</a>
         <div class="overflow-x-auto my-5">
             <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
                 <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
@@ -33,12 +36,12 @@
                             <td class="px-6 py-4">{{ $p->mulai }}</td>
                             <td class="px-6 py-4">{{ $p->sampai }}</td>
                             <td class="px-6 py-4 text-center">
-                                <a href="{{ route('eform.show', $p->id) }}"
+                                <a href="{{ route('formKoneksi.show', $p->id) }}"
                                     class="m-2 inline-block bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded">SHOW</a>
                                 <x-danger-button x-data=""
                                     x-on:click.prevent="$dispatch('open-modal', 'konfirmasiHapusPemohon')">{{ __('Hapus') }}</x-danger-button>
                                 <x-modal name="konfirmasiHapusPemohon" focusable>
-                                    <form method="POST" action="{{ route('eform.destroy', $p->id) }}" class="p-6">
+                                    <form method="POST" action="{{ route('formKoneksi.destroy', $p->id) }}" class="p-6">
                                         @csrf
                                         @method('DELETE')
                                         <h2 class="text-lg font-medium text-gray-900 dark:text-gray-100">
