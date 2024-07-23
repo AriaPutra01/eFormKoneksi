@@ -18,13 +18,13 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
-<body class="h-full">
+<body class=" dark:bg-gray-900">
     <div class="min-h-full">
         <nav x-data="{ isOpen: false }" class="bg-gray-800">
             <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <div class="flex h-16 items-center justify-between">
                     <div class="flex items-center">
-                        <div class="flex-shrink-0">
+                        <div class="flex-shrink-0 mr-6">
                             <img class="w-8" src="{{ asset('build/image/logobjb.png') }}" alt="Bank Bjb">
                         </div>
                         <div class="hidden md:block">
@@ -81,9 +81,9 @@
                 </div>
             </div>
         </nav>
-        <header class="bg-white shadow">
+        <header class="bg-white dark:bg-gray-800 shadow border-2 border-gray-900">
             <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
-                <h1 class="text-center text-3xl font-bold tracking-tight text-gray-900">Form Open Koneksi </h1>
+                <h1 class="text-center text-3xl font-bold tracking-tight text-gray-900 dark:text-white">Form Open Koneksi </h1>
             </div>
         </header>
         <main>
