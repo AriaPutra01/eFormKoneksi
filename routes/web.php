@@ -4,10 +4,19 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PemohonController;
 use App\Exports\WordExport;
+use App\Http\Controllers\pemohonEmailController;
+use App\Http\Controllers\pemohonKoneksiController;
 
 Route::get('/', function () {
     return view('dashboard');
-});
+})->name('/');
+
+Route::get('/pemohonKoneksi', [pemohonKoneksiController::class, 'create'])
+    ->name('pemohonKoneksi.create');
+
+Route::get('/pemohonEmail', [pemohonEmailController::class, 'create'])
+    ->name('pemohonEmail.create');
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
